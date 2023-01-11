@@ -1,0 +1,30 @@
+<section class="container-sm">
+    <h1 class="text-center">formaulario de contacto</h1>
+    <h2 *ngIf="mensajes">Gracias por comunicarte con nosotros</h2>
+    <form [formGroup]="registroform" (submit)="send()">
+        <section class="form-group m-3">
+            <input type="text" class="form-control" placeholder="nombre"
+            formControlName="nombres" >
+        </section>
+        <section class="form-group m-3">
+            <input type="email" class="form-control" placeholder="email"
+            formControlName="email" >
+        </section>
+        <section class="form-group m-3">
+            <input type="number" class="form-control" placeholder="telefono"
+            formControlName="telefono" >
+        </section>
+        <section class="form-group m-3">
+            <input type="text" class="form-control" placeholder="asunto"
+            formControlName="asunto" >
+        </section>
+        <section class="form-group m-3">
+            <textarea placeholder="mensaje" name="" class="form-control" id="" cols="30" rows="2"
+            formControlName="mensaje" ></textarea>
+        </section>
+        <section class="centrado">
+            <button [disabled]="registroform.invalid" 
+            class="btn btn-primary" type="submit">enviar</button>
+        </section>
+    </form>
+</section>

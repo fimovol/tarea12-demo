@@ -1,0 +1,26 @@
+input,textarea{
+    border-width:0;
+    border-bottom: 3px solid;
+    border-radius: 0; 
+}
+input:focus,textarea:focus{
+    border-radius: .375rem;
+}
+.centrado{
+    display: flex;
+    justify-content: center;
+}
+/* input{
+    border-color: red;
+}
+input::placeholder{
+    color: red;
+} */
+.ng-touched.ng-dirty.ng-invalid::placeholder,
+.ng-dirty.ng-invalid::placeholder ,
+.ng-touched.ng-invalid::placeholder{
+    color: red;
+}
+.ng-touched.ng-dirty.ng-invalid,.ng-dirty.ng-invalid,.ng-touched.ng-invalid{
+    border-color: red;
+}
