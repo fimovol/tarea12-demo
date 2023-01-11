@@ -1,0 +1,73 @@
+<h1 class="text-center">formulario registro</h1>
+<h2 class="text-center">Formulario reactivo</h2>
+<section class="container-sm">
+    <form [formGroup]="registroform" (submit)="send()">
+        <section class="form-group m-3">
+            <label class="h4" for="dni">dni</label>
+            <input formControlName="dni" class="form-control" type="text" >
+            <section *ngIf="dni?.invalid && (dni?.dirty || dni?.touched)">
+                <section *ngIf="dni?.errors?.['required']" class="alert alert-success">
+                    el dni es obligatorio
+                </section>
+                <section *ngIf="dni?.errors?.['pattern']" class="alert alert-success">
+                    el dni debe ser solo 8 digitos
+                </section>
+            </section>
+        </section>
+        <section class="form-group m-3">
+            <label class="h4" for="nombres">nombres</label>
+            <input class="form-control" type="text" formControlName="nombres">
+            <section *ngIf="nombres?.invalid && (nombres?.dirty || nombres?.touched)">
+                <section *ngIf="nombres?.errors?.['required']" class="alert alert-success">
+                    el nombre es obligatorio
+                </section>
+            </section>
+        </section>
+        <section class="form-group m-3">
+            <label class="h4" for="apellidos">apellidos</label>
+            <input class="form-control" type="text" formControlName="apellidos">
+            <section *ngIf="apellidos?.invalid && (apellidos?.dirty || apellidos?.touched)">
+                <section *ngIf="apellidos?.errors?.['required']" class="alert alert-success">
+                    el nombre es obligatorio
+                </section>
+            </section>
+        </section>
+        <section class="form-group m-3">
+            <label class="h4" for="fechanan">fechanan</label>
+            <input class="form-control" type="text" formControlName="fechanan">
+            <section *ngIf="fechanan?.invalid && (fechanan?.dirty || fechanan?.touched)">
+                <section *ngIf="fechanan?.errors?.['required']" class="alert alert-success">
+                    el nombre es obligatorio
+                </section>
+            </section>
+        </section>
+        <section class="form-group m-3">
+            <label class="h4" for="sueldo">sueldo</label>
+            <input class="form-control" type="text" formControlName="sueldo">
+            <section *ngIf="sueldo?.invalid && (sueldo?.dirty || sueldo?.touched)">
+                <section *ngIf="sueldo?.errors?.['required']" class="alert alert-success">
+                    la comision es obligatoria
+                </section>
+            </section>
+        </section>
+        <section class="form-group m-3">
+            <label class="h4" for="comision">comision</label>
+            <input class="form-control" type="number" formControlName="comision">
+            <section *ngIf="comision?.invalid && (comision?.dirty || comision?.touched)">
+                <section *ngIf="comision?.errors?.['required']" class="alert alert-success">
+                    la comision es obligatoria 18% es 0.18
+                </section>
+                <section *ngIf="comision?.errors?.['max']" class="alert alert-success">
+                    el maximo seria el 100% es decir "1"
+                </section>
+                <section *ngIf="comision?.errors?.['min']" class="alert alert-success">
+                    el minimo es 1% asi "0.01"
+                </section>
+            </section>
+        </section>
+        <section class="form-group m-3">
+            <button [disabled]="registroform.invalid" type="submit" class="btn btn-primary m-1">enviar</button>
+            <button class="btn btn-success m-1" (click)="refrescar()">refrescar</button>
+        </section>
+    </form>
+</section>
