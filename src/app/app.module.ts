@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { FormularioModule } from './formulario/formulario.module';
 import { RetoModule } from './reto/reto.module';
+import { RetopipesModule } from './retopipes/retopipes.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { RetoModule } from './reto/reto.module';
   imports: [
     BrowserModule,
     FormularioModule,
-    RetoModule
+    RetoModule,
+    RetopipesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

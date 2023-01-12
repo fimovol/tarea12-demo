@@ -24,11 +24,12 @@ export class FormRegistroComponent implements OnInit {
     apellidos: ['',Validators.required],
     fechanan: ['',Validators.required],
     sueldo: ['',Validators.required],
-    comision: ['',{
+    comision: [0,{
       validators:[
         Validators.required,
         Validators.max(1),
-        Validators.min(0.01)
+        Validators.min(0.01),
+        Validators.pattern('[0-9]')
       ]
     }],
 

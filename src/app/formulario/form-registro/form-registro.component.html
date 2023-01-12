@@ -5,6 +5,7 @@
         <section class="form-group m-3">
             <label class="h4" for="dni">dni</label>
             <input formControlName="dni" class="form-control" type="text" >
+            {{dni?.value }}
             <section *ngIf="dni?.invalid && (dni?.dirty || dni?.touched)">
                 <section *ngIf="dni?.errors?.['required']" class="alert alert-success">
                     el dni es obligatorio
@@ -17,6 +18,8 @@
         <section class="form-group m-3">
             <label class="h4" for="nombres">nombres</label>
             <input class="form-control" type="text" formControlName="nombres">
+
+            {{nombres?.value | lowercase}}
             <section *ngIf="nombres?.invalid && (nombres?.dirty || nombres?.touched)">
                 <section *ngIf="nombres?.errors?.['required']" class="alert alert-success">
                     el nombre es obligatorio
@@ -26,6 +29,7 @@
         <section class="form-group m-3">
             <label class="h4" for="apellidos">apellidos</label>
             <input class="form-control" type="text" formControlName="apellidos">
+            {{apellidos?.value | titlecase}}
             <section *ngIf="apellidos?.invalid && (apellidos?.dirty || apellidos?.touched)">
                 <section *ngIf="apellidos?.errors?.['required']" class="alert alert-success">
                     el apellido es obligatorio
@@ -35,6 +39,7 @@
         <section class="form-group m-3">
             <label class="h4" for="fechanan">fechanan</label>
             <input class="form-control" type="date" formControlName="fechanan">
+            {{fechanan?.value | date: 'longDate'}}
             <section *ngIf="fechanan?.invalid && (fechanan?.dirty || fechanan?.touched)">
                 <section *ngIf="fechanan?.errors?.['required']" class="alert alert-success">
                     la fecha es obligatoria
@@ -44,6 +49,7 @@
         <section class="form-group m-3">
             <label class="h4" for="sueldo">sueldo</label>
             <input class="form-control" type="text" formControlName="sueldo">
+            {{sueldo?.value | currency: 'EUR'}}
             <section *ngIf="sueldo?.invalid && (sueldo?.dirty || sueldo?.touched)">
                 <section *ngIf="sueldo?.errors?.['required']" class="alert alert-success">
                     el sueldo es obligatorio
@@ -53,6 +59,7 @@
         <section class="form-group m-3">
             <label class="h4" for="comision">comision</label>
             <input class="form-control" type="number" formControlName="comision">
+            {{comision?.value }}
             <section *ngIf="comision?.invalid && (comision?.dirty || comision?.touched)">
                 <section *ngIf="comision?.errors?.['required']" class="alert alert-success">
                     la comision es obligatoria 18% es 0.18

@@ -1,0 +1,34 @@
+
+<h1 class="text-center">FORMULARIO DE REGISTRO</h1>
+<h2 class="text-center">Formulario Reactivo</h2>
+
+<section class="container-sm">
+    <form  (ngSubmit)="onSubmit()">
+        <section class="form-group m-3">
+            <label for="monedas">valor:</label>
+            <input type="number" maxlength="8" class="form-control" 
+            
+            [(ngModel)]="model.valor">
+
+                <!-- <p>{{valor?.value | currency :'EUR', 'PEN'}}</p> -->
+            
+           <!-- <section *ngIf="valor?.invalid && (valor?.dirty || valor?.touched)">
+                <section *ngIf="valor?.errors?.['required']" class="alert alert-danger">
+                        Ingrese el valor  y seleccione el tipo de modena 
+                </section>
+            </section> -->
+            </section>
+            <!-- el selece con las opciones -->
+                <!-- <select class="form-select" name="valor" >
+                    <option value='EUR'>Euros €/ </option>
+                    <option value='PEN'>Soles s/</option>
+                    <option value='USD'>Dolares $/ </option>
+                </select> -->
+            
+            <select class="form-select" name="paises" [(ngModel)]="model.pais" (change)="onWriterChange()">
+                <option *ngFor="let item of paises" value={{item.value}} >{{item.text}} </option>
+            </select>
+            <section *ngIf="resultado == 3">{{model.valor | currency: 'EUR' }} </section>
+            <section *ngIf="resultado == 2">{{model.valor | currency: 'USD' }} </section>
+    </form>
+</section>
