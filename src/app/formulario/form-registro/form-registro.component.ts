@@ -9,7 +9,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class FormRegistroComponent implements OnInit {
 
   constructor(private formbuilder:FormBuilder) { }
-
+  datos:any[]=[]
   ngOnInit(): void {
   }
   registroform = this.formbuilder.group({
@@ -40,10 +40,13 @@ export class FormRegistroComponent implements OnInit {
   get comision(){return this.registroform.get('comision')}
   get sueldo(){return this.registroform.get('sueldo')}
 
-  send(){
-    console.log(this.registroform.value);
+  onSubmit(){
+    
+    this.datos.push(this.registroform.value)
+    console.log(this.datos);
   }
   refrescar(){
-    location.reload();
+    //location.reload();
+    this.registroform.reset()
   }
 }

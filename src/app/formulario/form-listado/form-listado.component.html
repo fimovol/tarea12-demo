@@ -1,1 +1,24 @@
-<p>form-listado works!</p>
+<table class="table ">
+    <thead class="thead-light">
+        <tr>
+            <th  scope="col">NUMERO</th>
+            <th  scope="col">DNI</th>
+            <th  scope="col">NOMBRE</th>
+            <th  scope="col">APELLIDOS</th>
+            <th  scope="col">FECHA DE NACIMIENTO</th>
+            <th  scope="col">SUELDO</th>
+            <th  scope="col">COMISION</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of inp_datos;let indexOfelement=index;">
+            <td scope="row">{{indexOfelement+1}}</td>
+            <td>{{item.dni}}</td>
+            <td>{{item.nombres  | lowercase }}</td>
+            <td>{{item.apellidos  | titlecase}}</td>
+            <td>{{item.fechanan  | date: 'longDate'}}</td>
+            <td>{{item.sueldo | currency: 'EUR'}}</td>
+            <td>{{item.comision | percent: '2.2'}}</td>
+        </tr>
+    </tbody>
+</table>

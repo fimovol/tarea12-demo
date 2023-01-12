@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-form-listado',
@@ -11,5 +11,5 @@ export class FormListadoComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  @Input() inp_datos = new Array
 }
